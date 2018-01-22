@@ -179,7 +179,8 @@ class PM_Facebook_Scrape {
     
     $post_permalink = get_permalink( $post_ID );  
     $base_url = 'https://graph.facebook.com/';
-
+    $token = 'appid|appsecret';
+    
     $args = array(
       'timeout'     => 20,
       'redirection' => 5,
@@ -196,6 +197,7 @@ class PM_Facebook_Scrape {
       'body'        => array(
         'id'  =>  $post_permalink,
         'scrape' => 'true'
+        'access_token' => $token
       )
     );  
             
